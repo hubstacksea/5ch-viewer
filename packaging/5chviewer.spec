@@ -2,7 +2,7 @@
 %global _build_id_links none
 
 Name:           5chviewer
-Version:        1.4.0
+Version:        1.4.1
 Release:        1%{?dist}
 Summary:        Tabbed 5ch.io viewer (wxWidgets)
 License:        MIT
@@ -43,6 +43,9 @@ strip --strip-unneeded %{buildroot}%{_bindir}/5chviewer
 %license %{_docdir}/5chviewer/LICENSE
 
 %changelog
+* Sat Oct 17 2026 5ch Viewer maintainers - 1.4.1-1
+- Hover popups get a visible frame on all platforms
+
 * Fri Oct 16 2026 5ch Viewer maintainers - 1.4.0-1
 - Posting confirmation (terms) is shown and must be accepted by the user
 - Third-party licence notices, MIT LICENSE, Help > About

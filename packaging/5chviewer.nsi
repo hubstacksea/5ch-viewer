@@ -1,8 +1,8 @@
 ; NSIS installer for 5ch Viewer (Windows x64)
-;   makensis -DVERSION=1.4.0 -DEXE=5chviewer.exe -DOUTFILE=dist/5chviewer-1.4.0-setup.exe packaging/5chviewer.nsi
+;   makensis -DVERSION=1.4.1 -DEXE=5chviewer.exe -DOUTFILE=dist/5chviewer-1.4.1-setup.exe packaging/5chviewer.nsi
 Unicode true
 !ifndef VERSION
-  !define VERSION "1.4.0"
+  !define VERSION "1.4.1"
 !endif
 !ifndef EXE
   !define EXE "5chviewer.exe"

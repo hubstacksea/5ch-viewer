@@ -2,7 +2,7 @@
 # Build a .deb from the already-built ./5chviewer  (usage: packaging/build-deb.sh [version])
 set -e
 cd "$(dirname "$0")/.."
-VER=${1:-1.4.0}
+VER=${1:-1.4.1}
 ARCH=$(dpkg --print-architecture)
 STAGE=build/deb/5chviewer_${VER}_${ARCH}
 rm -rf "$STAGE"

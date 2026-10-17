@@ -54,12 +54,12 @@ make clean
 
 ## インストール
 ### Linux
-- パッケージから: `sudo apt install ./5chviewer_1.4.0_amd64.deb` / `sudo dnf install ./5chviewer-1.4.0-1.x86_64.rpm`
+- パッケージから: `sudo apt install ./5chviewer_1.4.1_amd64.deb` / `sudo dnf install ./5chviewer-1.4.1-1.x86_64.rpm`
 - ソースから: `sudo make install` (`PREFIX=/usr/local` や `DESTDIR=` で変更可。実行ファイル、デスクトップエントリ、アイコンを配置)
 - 実行時の依存: wxWidgets 3.2 (GTK3 / html / aui のランタイム) と libcurl。日本語フォントがない環境では Noto CJK などを入れてください。
 
 ### Windows
-- `5chviewer-1.4.0-setup.exe` を実行(64ビット版 Windows、管理者権限)。`C:\Program Files\5ch Viewer` にインストールし、スタートメニュー(任意でデスクトップ)にショートカットを作り、「アプリと機能」からアンインストールできます。
+- `5chviewer-1.4.1-setup.exe` を実行(64ビット版 Windows、管理者権限)。`C:\Program Files\5ch Viewer` にインストールし、スタートメニュー(任意でデスクトップ)にショートカットを作り、「アプリと機能」からアンインストールできます。
 - インストーラーを使わず、`5chviewer.exe` を任意のフォルダに置いてそのまま実行することもできます(追加DLL不要)。
 
 ## パッケージの作成
@@ -71,7 +71,7 @@ make clean
 | `make rpm` | `5chviewer-<ver>-1.x86_64.rpm` | rpmbuild、wx-config (ソースからビルド。非RPM環境では `RPMBUILD_ENV=--nodeps`) |
 | `make installer` | `5chviewer-<ver>-setup.exe` | NSIS の `makensis` (先に `5chviewer.exe` を自動ビルド) |
 
-- バージョンは `make installer VERSION=1.4.0` のように指定します(deb/rpm は `packaging/build-deb.sh 1.4.0` のように引数で指定)。
+- バージョンは `make installer VERSION=1.4.1` のように指定します(deb/rpm は `packaging/build-deb.sh 1.4.1` のように引数で指定)。
 - NSIS を標準以外の場所に置いた場合は `MAKENSIS=<makensis> NSIS_DIR=<Stubs/Plugins/Include のあるフォルダ>` を指定します。
 - パッケージ関連のファイルは `packaging/` にあります(.spec / .nsi / build-*.sh / .desktop / アイコン)。
 

@@ -3,7 +3,7 @@
 # RPMBUILD_ENV can hold extra rpmbuild arguments (e.g. "--nodeps" when building on a non-RPM host).
 set -e
 cd "$(dirname "$0")/.."
-VER=${1:-1.4.0}
+VER=${1:-1.4.1}
 TOP=$PWD/build/rpm
 rm -rf "$TOP"
 mkdir -p "$TOP"/{BUILD,RPMS,SOURCES,SPECS,SRPMS} dist

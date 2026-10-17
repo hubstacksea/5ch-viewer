@@ -4,7 +4,7 @@
 #   Windows (MSYS2 shell):  make            (wx-config from MSYS2 mingw package)
 WXMINGW ?= $(abspath $(CURDIR)/../wx-mingw-3.2.6-full)
 SRCS := src/main.cpp src/json.h src/textutil.h
-VERSION ?= 1.4.0
+VERSION ?= 1.4.1
 CXXFLAGS ?= -O2
 # override: rpmbuild passes CXXFLAGS on the command line, which would otherwise drop these
 override CXXFLAGS += -std=c++17 -Wall -Wextra -Wno-unused-parameter -DAPP_VERSION='"$(VERSION)"'
