@@ -316,8 +316,11 @@ static wxString NormAnchor(wxString t) {
 // ================================================================ hover popup
 class PopupView : public wxPopupWindow {
 public:
-    explicit PopupView(wxWindow* parent) : wxPopupWindow(parent, wxBORDER_SIMPLE) {
-        html = new wxHtmlWindow(this, wxID_ANY, wxDefaultPosition, wxSize(560, 100), wxHW_SCROLLBAR_AUTO | wxBORDER_NONE);
+    // wxBORDER_SIMPLE is not drawn for popups on every platform (e.g. GTK without a compositor):
+    // draw a 1px frame ourselves by letting the popup's own background show around the HTML view
+    explicit PopupView(wxWindow* parent) : wxPopupWindow(parent, wxBORDER_NONE) {
+        SetBackgroundColour(wxSystemSettings::GetColour(wxSYS_COLOUR_GRAYTEXT));
+        html = new wxHtmlWindow(this, wxID_ANY, wxPoint(1, 1), wxSize(558, 98), wxHW_SCROLLBAR_AUTO | wxBORDER_NONE);
         html->SetBorders(0);
     }
     wxHtmlWindow* html;
@@ -2131,7 +2134,7 @@ void MainFrame::ShowPopup(ThreadView* v, const wxString& href) {
     h->SetSize(wxSize(560, 100));
     h->SetPage(html);
     int ph = 100;
-    if (h->GetInternalRepresentation()) ph = h->GetInternalRepresentation()->GetHeight() + 6;
+    if (h->GetInternalRepresentation()) ph = h->GetInternalRepresentation()->GetHeight() + 4;
     wxPoint mp = wxGetMousePosition();
     int dispIdx = wxDisplay::GetFromPoint(mp);
     wxRect area = wxDisplay(dispIdx == wxNOT_FOUND ? 0 : dispIdx).GetClientArea();
@@ -2142,7 +2145,7 @@ void MainFrame::ShowPopup(ThreadView* v, const wxString& href) {
     if (pos.y + sz.y > area.GetBottom()) pos.y = mp.y - sz.y - 6;
     if (pos.x < area.x) pos.x = area.x;
     m_popup->SetSize(pos.x, pos.y, sz.x, sz.y);
-    h->SetSize(sz);
+    h->SetSize(1, 1, sz.x - 2, sz.y - 2);
     m_popup->href = href;
     m_popup->Show();
 }
