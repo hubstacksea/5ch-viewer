@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Application
+Name=5ch Viewer
+Name[ja]=5chビューア
+Comment=Tabbed 5ch.io board and thread viewer
+Comment[ja]=タブ対応の5chビューア
+Exec=5chviewer
+Icon=5chviewer
+Terminal=false
+Categories=Network;News;
+Keywords=5ch;2ch;BBS;

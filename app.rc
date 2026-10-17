@@ -1,0 +1,4 @@
+// "aaaa": named icon resources sort alphabetically and Explorer uses the first one, so this must
+// come before wx's own wxICON_AAA (wxWidgets convention).
+aaaa ICON "packaging/5chviewer.ico"
+#include "wx/msw/wx.rc"

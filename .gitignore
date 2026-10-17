@@ -1,0 +1,8 @@
+# build outputs
+/5chviewer
+/5chviewer.exe
+/app.o
+/build/
+/dist/
+*.o
+/.version
